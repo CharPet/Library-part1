@@ -1,45 +1,86 @@
 const myLibrary = [
     {
-        title: "The Steppenwolf",
-        author: "Hermann Hesse",
-        pages: 250
-    }
+        title: "The Clean Coder",
+        author: "Robert C. Martin",
+        pages: 244,
+        status: "not read"
+    },
+    {
+        title: "Don't Make Me Think",
+        author: "Steve Krug",
+        pages: 209,
+        status: "not read"
+    },
+    {
+        title: "Dive Into Design Patterns",
+        author: "Alexander Shvets",
+        pages: 410,
+        status: "not read"  
+    },
+    {
+        title: "Eloquent JavaScript",
+        author: "Marijn Haverbeke",
+        pages: 447,
+        status: "currently reading"
+    },
+    {
+        title: "C++ Primer Plus",
+        author: "Stephen Prata",
+        pages: 1438,
+        status: "not read"
+    },
+    {
+        title: "Web Typography",
+        author: "Richard Rutter",
+        pages: 201,
+        status: "not read"
+    },
+    {
+        title: "Articulating Design Decisions",
+        author: "Tom Greever",
+        pages: 275,
+        status: "not read"
+    },
+    {
+        title: "Think Like a Programmer",
+        author: "V. Anton Spraul",
+        pages: 256,
+        status: "currently reading"
+    },
+ 
+
 ];
 // console.log(myLibrary);
 
-function Book(title, author, pages) {
-  // the constructor...
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
+function Book(title, author, pages, status) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.status = status;
 }
 
 function addBookToLibrary() {
-  // do stuff here
-  const title = document.querySelector('#title').value;
-  //console.log(title);
-  const author = document.querySelector('#author').value;
-  //console.log(author);
-  const pages = document.querySelector('#pages').value;
-  //console.log(pages);
+    const title = document.querySelector('#title').value;
+    const author = document.querySelector('#author').value;
+    const pages = document.querySelector('#pages').value;
+    const statusInput = document.querySelector('input[name="status"]:checked');
+    const status = statusInput ? statusInput.value : '';
 
-  const newBook = new Book(title, author, pages);
+    const newBook = new Book(title, author, pages, status);
 
-  myLibrary.push(newBook);
+    myLibrary.push(newBook);
 
-  document.querySelector('#title').value = '';
-  document.querySelector('#author').value = '';
-  document.querySelector('#pages').value = '';
+    document.querySelector('#title').value = '';
+    document.querySelector('#author').value = '';
+    document.querySelector('#pages').value = '';
+  
 }
 
 document.getElementById('book-elements').addEventListener('submit', function (e) {
     e.preventDefault();
     addBookToLibrary();
-
     displayBooks();
 });
-
-// console.log(myLibrary);
 
 function displayBooks() {
     const bookList = document.getElementById('bookshelf-ul');
@@ -47,20 +88,25 @@ function displayBooks() {
   
     myLibrary.forEach((book, index) => {
         const listItem = document.createElement('li');
+        const statusText = capitalize(book.status); 
         listItem.innerHTML = `
           <div class="book-item">
-            <span>${book.title} by ${book.author}, ${book.pages} pages</span>
+            <span>${book.title} by ${book.author}, ${book.pages} pages, ${statusText}</span>
             <button onclick="removeBook(${index})">Remove</button>
           </div>
         `;
         bookList.appendChild(listItem);
       });
-  }
+}
 
 function removeBook(index) {
     myLibrary.splice(index, 1);
     displayBooks();
 } 
 
+function capitalize(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+}
 
-  displayBooks();
+document.querySelector('input[name="status"][value="not-read"]').checked = true;
+displayBooks();

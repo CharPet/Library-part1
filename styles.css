@@ -12,7 +12,9 @@ body {
 
 h1 {
     text-align: center;
-    text-decoration: underline;
+    border: 2px groove brown;
+    background-color: brown;
+    color: white;
     margin-bottom: 100px;
 }
 
@@ -23,26 +25,36 @@ h1 {
 
 h2 {
     text-align: center;
+    text-decoration: underline;
 }
 
 #book-form {
-    background-color: white;
+    background: blanchedalmond;
     border: 5px groove black;
     border-radius: 8px;
+    height: 500px;
+}
+
+.radio-buttons {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    border: 4px solid black;
+    border-radius: 8px;
+    background-color: burlywood;
+    font-weight: bold;
 }
 
 #bookshelf {
-    width: 500px;
-    background-color: white;
+    width: 700px;
+    background-color:blanchedalmond;
     border: 5px groove black;
     border-radius: 8px;
     
 }
 
 #bookshelf-ul {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+ 
     margin: 0;
     padding: 0;
 }
@@ -58,6 +70,7 @@ input {
     width: 200px;
     border: 1px solid black;
     border-radius: 4px;
+    margin: 5px 0;
 }
 
 button {
@@ -69,7 +82,6 @@ button {
     color: white;
     margin-top: 20px;
     align-self: center;
-    
 }
 
 li {
@@ -77,11 +89,42 @@ li {
 }
 
 .book-item {
-    text-align: center;
+    display: flex;
+    justify-content: space-aro;
+    align-items: center;
     margin: 0 auto;
+    margin-left: 10px;
 }
+
+.book-item span {
+    flex-grow: 1;
+}
+
+
 
 .book-item button {
     background-color: red;
+    width: 80px;
+    margin-top: 5px;
+    
 }
 
+label {
+    text-align: center;
+}
+
+label:first-of-type {
+    margin-top: 10px;
+}
+
+#pages {
+    margin-bottom: 20px;
+}
+
+input[type="radio"] {
+    margin-bottom: 20px;
+  }
+
+input[type="radio"]:last-of-type {
+    margin-bottom: 10px;
+  }

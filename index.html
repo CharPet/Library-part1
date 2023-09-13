@@ -15,6 +15,17 @@
                 <input type="text" id="title" placeholder="Title" required>
                 <input type="text" id="author" placeholder="Author" required>
                 <input type="number" id="pages" placeholder="Pages" required>
+
+                <div class="radio-buttons">
+                    <label for="read">Read:</label>
+                    <input type="radio" id="read" name="status" value="read" required>
+                    
+                    <label for="currently-reading">Currently Reading:</label>
+                    <input type="radio" id="currently-reading" name="status" value="currently-reading" required>
+                 
+                    <label for="not-read">Not Read:</label>
+                    <input type="radio" id="not-read" name="status" value="not-read" required>  
+                </div>
             <button type="submit">Add Book</button>
             </form>
         </div>
