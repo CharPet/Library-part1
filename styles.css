@@ -1,0 +1,87 @@
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    line-height: 1.4;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 16px;
+    background: linear-gradient(#f69d3c, #3f87a6);
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+h1 {
+    text-align: center;
+    text-decoration: underline;
+    margin-bottom: 100px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+}
+
+h2 {
+    text-align: center;
+}
+
+#book-form {
+    background-color: white;
+    border: 5px groove black;
+    border-radius: 8px;
+}
+
+#bookshelf {
+    width: 500px;
+    background-color: white;
+    border: 5px groove black;
+    border-radius: 8px;
+    
+}
+
+#bookshelf-ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+form {
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    width: 200px;
+    border: 1px solid black;
+    border-radius: 4px;
+}
+
+button {
+    width: 200px;
+    background-color: green;
+    font-weight: bold;
+    border: 2px solid black;
+    border-radius: 4px;
+    color: white;
+    margin-top: 20px;
+    align-self: center;
+    
+}
+
+li {
+    list-style-type: none;
+}
+
+.book-item {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.book-item button {
+    background-color: red;
+}
+

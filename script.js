@@ -1,4 +1,10 @@
-const myLibrary = [];
+const myLibrary = [
+    {
+        title: "The Steppenwolf",
+        author: "Hermann Hesse",
+        pages: 250
+    }
+];
 // console.log(myLibrary);
 
 function Book(title, author, pages) {
@@ -21,15 +27,40 @@ function addBookToLibrary() {
 
   myLibrary.push(newBook);
 
-//    document.querySelector('#title').value = '';
-//    document.querySelector('#author').value = '';
-//    document.querySelector('#pages').value = '';
+  document.querySelector('#title').value = '';
+  document.querySelector('#author').value = '';
+  document.querySelector('#pages').value = '';
 }
 
 document.getElementById('book-elements').addEventListener('submit', function (e) {
     e.preventDefault();
     addBookToLibrary();
+
+    displayBooks();
 });
 
-console.log(myLibrary);
+// console.log(myLibrary);
 
+function displayBooks() {
+    const bookList = document.getElementById('bookshelf-ul');
+    bookList.innerHTML = '';
+  
+    myLibrary.forEach((book, index) => {
+        const listItem = document.createElement('li');
+        listItem.innerHTML = `
+          <div class="book-item">
+            <span>${book.title} by ${book.author}, ${book.pages} pages</span>
+            <button onclick="removeBook(${index})">Remove</button>
+          </div>
+        `;
+        bookList.appendChild(listItem);
+      });
+  }
+
+function removeBook(index) {
+    myLibrary.splice(index, 1);
+    displayBooks();
+} 
+
+
+  displayBooks();
