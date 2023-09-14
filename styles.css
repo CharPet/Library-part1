@@ -5,14 +5,14 @@ body {
     line-height: 1.4;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 16px;
-    background: linear-gradient(#f69d3c, #3f87a6);
-    background-repeat: no-repeat;
-    height: 100vh;
+    background: #f69d3c;
+    
+
 }
 
 h1 {
     text-align: center;
-    border: 2px groove brown;
+    border: 4px inset black;
     background-color: brown;
     color: white;
     margin-bottom: 100px;
@@ -46,11 +46,10 @@ h2 {
 }
 
 #bookshelf {
-    width: 700px;
+    width: 800px;
     background-color:blanchedalmond;
     border: 5px groove black;
     border-radius: 8px;
-    
 }
 
 #bookshelf-ul {
@@ -81,7 +80,7 @@ button {
     border-radius: 4px;
     color: white;
     margin-top: 20px;
-    align-self: center;
+    align-self: flex-start;
 }
 
 li {
@@ -90,10 +89,13 @@ li {
 
 .book-item {
     display: flex;
-    justify-content: space-aro;
-    align-items: center;
-    margin: 0 auto;
-    margin-left: 10px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-end;
+    align-content: center;
+    border: 1px solid black; 
+    padding: 10px;
+    margin: 10px; 
 }
 
 .book-item span {
@@ -105,8 +107,10 @@ li {
 .book-item button {
     background-color: red;
     width: 80px;
-    margin-top: 5px;
-    
+    margin-top: 2px;
+    margin-bottom: 2px;
+    margin-right: 10px;
+    align-self: center;   
 }
 
 label {
