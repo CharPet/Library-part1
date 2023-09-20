@@ -54,7 +54,7 @@ const myLibrary = [
         status: "currently-reading"
     },
     {
-        title: "Μάθετε, PHP, MySQL και Apache ",
+        title: "Μάθετε PHP, MySQL και Apache ",
         author: "July C. Meloni",
         pages: 639,
         status: "read"
