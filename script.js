@@ -52,6 +52,18 @@ const myLibrary = [
         author: "Cody Lindley",
         pages: 178,
         status: "currently-reading"
+    },
+    {
+        title: "Μάθετε, PHP, MySQL και Apache ",
+        author: "July C. Meloni",
+        pages: 639,
+        status: "read"
+    },
+    {
+        title: "Βιντεοπαιχνίδια. Βιομηχανία και Ανάπτυξη",
+        author: "Κώστας Αναγνώστου",
+        pages: 368,
+        status: "read"
     }
 
 ];
